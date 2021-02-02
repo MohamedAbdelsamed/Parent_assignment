@@ -1,7 +1,26 @@
- <form  [formGroup]="loginForm" (submit)="login()" >
-  <input formControlName="email" type="email">
+<div class="container">
+  <div class="login-form d-flex">
+    <div class="w-50">
+     <img src="../../../../assets/images/login.jpg" class="img-fluid">
+    </div>
+    <form class="w-50"  [formGroup]="loginForm" (submit)="login()">
+      <h3 class="main-color">welcome back !</h3>
+      <span class="main-color3">please login to acess your <strong class="main-color2">space</strong> dashboard</span>
+      <div class="form-group">
+        <label class="main-color3">User Name</label>
+        <input formControlName="email" type="email" class="form-control" placeholder="User Name...">
+      </div>
+      <div class="form-group">
+        <label class="main-color3">Password</label>
+        <input formControlName="password" type="password" class="form-control" placeholder="Password">
+      </div>
+      <div class="d-flex link-Wrapper">
+        <a href="" class="main-color2">forget Password ?</a>
+        <input type="submit" class="btn" value="login"> 
+      </div>
+      
+    </form>
+  </div>
+</div>
 
-  <input formControlName="password" type="password">
 
-  <button type="submit"> login</button>
-</form>

@@ -1,0 +1,32 @@
+.bread-crumb{
+    background-color: #dedede;
+    box-shadow: 0px 9px 3px -8px #c3bcbc;
+}
+.bread-crumb .breadcrumb{
+    background-color: transparent;
+    margin: 0;
+}
+
+.bread-crumb .breadcrumb-item+.breadcrumb-item::before{
+    color: #8e44ad;
+}
+.bread-crumb .wrapper{
+    justify-content: space-between;
+    padding-bottom: 10px;
+}
+.bread-crumb .wrapper h3{
+    text-transform: capitalize;
+    font-weight: 400;
+    font-size: 25px;
+} 
+
+.bread-crumb .btn{
+    background: #8e44ad;
+    color: #fff;
+    padding: 10px 15px;
+    border-radius: 25px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-size: 15px;
+    font-weight: 300;
+}

@@ -25,7 +25,7 @@ import { ToastrModule } from 'ngx-toastr';
     SharedModule,
     StoreModule.forRoot({}),
     ToastrModule.forRoot(),
-    // EffectsModule.forRoot([]),
+    EffectsModule.forRoot([]),
 
     StoreDevtoolsModule.instrument({
       name : 'Parent Company assignment',

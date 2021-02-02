@@ -1,0 +1,22 @@
+<app-bread-crumb></app-bread-crumb>
+<div class="user-list">
+    <div class="container position-relative">
+        <div class="wrapper">
+            <div class="header">
+                <span>user</span>
+                <span>action</span>
+            </div>
+            <ul class="list-group" *ngFor="let user of userList">
+                <li (click)="viewData(item)">
+                    <img [src]="user.avatar" class="circle img-fluid">
+                    {{user.first_name}} {{user.last_name}}
+                </li>
+            </ul>
+            <div class="details position-absolute text-center">
+                <img src="https://reqres.in/img/faces/1-image.jpg" class="circle img-fluid">
+                <h5>user.first_name</h5>
+                <h5>user.first_name</h5>
+            </div>
+        </div>
+    </div>
+</div>

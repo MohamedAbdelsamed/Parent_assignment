@@ -2,6 +2,7 @@ import { AuthService } from './../../services/auth.service';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ToastrService } from 'ngx-toastr';
+import { Router, Routes } from '@angular/router';
 
 @Component({
   selector: 'app-login',
@@ -13,6 +14,7 @@ export class LoginComponent implements OnInit {
     email : this.fb.control('eve.holt@reqres.in', [Validators.required]),
     password : this.fb.control('cityslicka', [Validators.required]),
   })
+  isLoggin: boolean;
 
   get email() {
     return this.loginForm.get('email')
@@ -22,7 +24,10 @@ export class LoginComponent implements OnInit {
     return this.loginForm.get('password')
   };
 
-  constructor(private fb : FormBuilder, private authService: AuthService, private toastr: ToastrService) { }
+  constructor(private fb : FormBuilder,
+              private authService: AuthService,
+              private toastr: ToastrService,
+              private route: Router) { }
 
   ngOnInit(): void {
   }
@@ -35,8 +40,10 @@ export class LoginComponent implements OnInit {
 
       this.authService.login(crediential).subscribe((res:any)=>{
         if(res.token){
+          this.isLoggin = true;
           this.toastr.success('login Success')
-          localStorage.setItem('token', JSON.stringify(res.token))
+          localStorage.setItem('token', JSON.stringify(res.token));
+          this.route.navigate(["user-list"])
         }
     });
   }
